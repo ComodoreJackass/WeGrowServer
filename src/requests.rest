@@ -1,0 +1,100 @@
+GET http://localhost:3000/plants
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "korisnik",
+    "password": "lozinka"
+}
+
+###
+
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "username": "korisnik5",
+    "password": "lozinka5",    
+    "email": "email",
+    "createdOn": "2000-12-16T11:21:13.000Z"
+}
+
+###
+GET http://localhost:3000/progress
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+###
+POST http://localhost:3000/progress/byId
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "userId": 1
+}
+
+###
+POST http://localhost:3000/progress/insert
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "userId": 1,
+    "plantId": 1,
+    "startedOn": "2000-12-16T11:21:13.000Z",
+    "stageId": 1,
+    "stageStartedOn": "2000-12-16T11:21:13.000Z",
+    "lastWateredOn": "2000-12-16T11:21:13.000Z",
+    "done": false
+}
+
+###
+POST http://localhost:3000/plants/byId
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "plantId": 1
+}
+
+###
+GET http://localhost:3000/growthStages
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+###
+POST http://localhost:3000/growthStages/byId
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "growthStageId": 1
+}
+
+###
+GET http://localhost:3000/growthConditions
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+###
+POST http://localhost:3000/growthConditions/byId
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "growthConditionsId": 1
+}
+
+###
+GET http://localhost:3000/materials
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+###
+DELETE http://localhost:3000/deleteAccount
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "username": "a",
+    "password": "a"
+}

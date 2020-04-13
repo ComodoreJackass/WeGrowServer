@@ -19,6 +19,8 @@ app.use(async (req, res, next) => {
     next();
 });
 
+
+app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/login', routes.login);
 app.use('/register', routes.register);
 

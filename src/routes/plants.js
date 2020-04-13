@@ -9,6 +9,12 @@ router.get('/', authenticateToken, async (req, res) => {
     return res.send(plants);
 });
 
+//Returns array of all plants objects
+router.get('/test', async (req, res) => {
+    const plants = await req.context.models.Plants.findAll();
+    return res.send(plants);
+});
+
 //Returns array of plants objects by plant id
 router.post('/byId', authenticateToken, async (req, res) => {
     const plantId = req.body.plantId;

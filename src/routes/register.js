@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import {sequelize} from '../models/index';
 
 const router = Router();
 
@@ -6,7 +7,6 @@ router.post('/', async(req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;
-    const createdOn = req.body.createdOn;
 
     const users = await req.context.models.Users.findAll();
     let userExists = false;
@@ -27,7 +27,7 @@ router.post('/', async(req, res) => {
             username: username,
             password: password,
             email: email,
-            created_on: createdOn
+            created_on: sequelize.literal('CURRENT_TIMESTAMP')
         });
         return res.sendStatus(200);
     } 

@@ -1,4 +1,4 @@
-GET http://localhost:3000/plants
+GET https://afternoon-depths-99413.herokuapp.com/plants
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
 
 ###
@@ -19,7 +19,6 @@ Content-Type: application/json
     "username": "korisnik5",
     "password": "lozinka5",    
     "email": "email",
-    "createdOn": "2000-12-16T11:21:13.000Z"
 }
 
 ###
@@ -43,10 +42,45 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNua
 {
     "userId": 1,
     "plantId": 1,
-    "startedOn": "2000-12-16T11:21:13.000Z",
     "stageId": 1,
-    "stageStartedOn": "2000-12-16T11:21:13.000Z",
-    "lastWateredOn": "2000-12-16T11:21:13.000Z",
+    "done": false
+}
+
+###
+PATCH http://localhost:3000/progress/stageId
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "progressId": 1,
+    "stageId": 2
+}
+
+###
+PATCH http://localhost:3000/progress/stageStartedOn
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "progressId": 1
+}
+
+###
+PATCH http://localhost:3000/progress/lastWateredOn
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "progressId": 1
+}
+
+###
+PATCH http://localhost:3000/progress/done
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "progressId": 1,
     "done": false
 }
 

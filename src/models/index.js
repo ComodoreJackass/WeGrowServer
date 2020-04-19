@@ -23,6 +23,10 @@ const models = {
     Materials: sequelize.import('./materials')
 };
 
+models.ProgressTracking.belongsTo(models.Plants, {  foreignKey : 'plant_id' });
+models.ProgressTracking.belongsTo(models.GrowthStages, {  foreignKey : 'stage_id' });
+
+
 // Can be used for creating one to many connections and stuff,
 // but we can make do without additional complexity for now
 /*Object.keys(models).forEach(key => {

@@ -6,7 +6,9 @@ const router = Router();
 
 //Returns array of all progress objects
 router.get('/', authenticateToken, async (req, res) => {
-    const progressTracking = await req.context.models.ProgressTracking.findAll();
+    const progressTracking = await req.context.models.ProgressTracking.findAll({
+        include: [{ all: true }]
+    });
     return res.send(progressTracking);
 });
 
@@ -18,7 +20,8 @@ router.post('/byId', authenticateToken, async (req, res) => {
     if (!Number.isInteger(userId) || userId == undefined) return res.sendStatus(406);
 
     const progressTracking = await req.context.models.ProgressTracking.findAll({
-        where: { user_id: userId }
+        where: { user_id: userId },
+        include: [{ all: true }]
     });
     return res.send(progressTracking);
 })

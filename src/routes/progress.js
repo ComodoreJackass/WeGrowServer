@@ -140,4 +140,20 @@ router.patch('/done', async (req, res) => {
     }
 })
 
+//Delete progress item
+router.delete('/', authenticateToken, async(req, res) => {
+    const progressId = req.body.progressId;
+
+    try{
+        const progress = await req.context.models.ProgressTracking.findOne({
+            where: {id: progressId}
+        });
+        progress.destroy();
+        return res.sendStatus(200);
+    } catch(err) {
+        console.log(err);
+        return res.sendStatus(400);
+    }
+})
+
 export default router;

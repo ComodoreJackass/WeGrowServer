@@ -35,7 +35,15 @@ router.post('/insert', async (req, res) => {
 
     //Lots of checks needed here, I'll add them if there's time
     const progress = await req.context.models.ProgressTracking.findAll();
-    let id = progress.length + 1;
+
+    let id = 0;
+    progress.forEach(element => {
+        if (element.id > id) {
+            id = element.id;
+        }
+    });
+
+    id += 1;
 
     try {
         await req.context.models.ProgressTracking.create({
@@ -141,16 +149,16 @@ router.patch('/done', async (req, res) => {
 })
 
 //Delete progress item
-router.delete('/', authenticateToken, async(req, res) => {
+router.delete('/', authenticateToken, async (req, res) => {
     const progressId = req.body.progressId;
 
-    try{
+    try {
         const progress = await req.context.models.ProgressTracking.findOne({
-            where: {id: progressId}
+            where: { id: progressId }
         });
         progress.destroy();
         return res.sendStatus(200);
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         return res.sendStatus(400);
     }

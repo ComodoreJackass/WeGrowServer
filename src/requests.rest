@@ -18,7 +18,7 @@ Content-Type: application/json
 {
     "username": "korisnik5",
     "password": "lozinka5",    
-    "email": "email",
+    "email": "email"
 }
 
 ###
@@ -124,9 +124,38 @@ GET http://localhost:3000/materials
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
 
 ###
+DELETE https://afternoon-depths-99413.herokuapp.com/deleteAccount
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "username": "Cc",
+    "password": "cc"
+}
+
+###
 DELETE http://localhost:3000/deleteAccount
 Content-Type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "username": "a",
+    "password": "a"
+}
+
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "username": "a",
+    "password": "a",    
+    "email": "a"
+}
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
 
 {
     "username": "a",

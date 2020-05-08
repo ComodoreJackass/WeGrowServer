@@ -31,6 +31,8 @@ app.use('/growthConditions', routes.growthConditions);
 app.use('/materials', routes.materials);
 app.use('/deleteAccount', routes.deleteAccount);
 
+//app.use('/senzori', routes .senzori);
+
 app.listen(process.env.PORT, () =>
     console.log(`Example app listening on port ${process.env.PORT}!`),
 );

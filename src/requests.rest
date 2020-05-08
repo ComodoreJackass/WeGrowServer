@@ -1,4 +1,4 @@
-GET https://afternoon-depths-99413.herokuapp.com/plants
+GET https://localhost:3000/plants
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
 
 ###
@@ -23,6 +23,10 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/progress
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+###
+GET http://localhost:3000/plants
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
 
 ###
@@ -161,3 +165,8 @@ Content-Type: application/json
     "username": "a",
     "password": "a"
 }
+
+###
+GET http://localhost:3000/senzori
+
+

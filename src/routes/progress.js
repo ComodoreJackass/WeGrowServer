@@ -54,7 +54,8 @@ router.post('/insert', async (req, res) => {
             stage_id: stageId,
             stage_started_on: sequelize.literal('CURRENT_TIMESTAMP'),
             last_watered_on: sequelize.literal('CURRENT_TIMESTAMP'),
-            done: done
+            done: done,
+            has_sensors: false,
         });
         return res.sendStatus(200);
     }

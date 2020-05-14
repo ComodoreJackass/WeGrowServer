@@ -148,6 +148,28 @@ router.patch('/done', async (req, res) => {
     }
 })
 
+//Use to update sensors state
+router.patch('/sensors', async (req, res) => {
+    const progressId = req.body.progressId;
+    const sensors = req.body.sensors;
+
+    if (!Number.isInteger(progressId) || progressId == undefined) return res.sendStatus(406);
+    if (sensors == undefined) return res.sendStatus(406);
+
+    try {
+        await req.context.models.ProgressTracking.update({ has_sensors: sensors }, {
+            where: {
+                id: progressId
+            }
+        });
+        return res.sendStatus(200);
+    }
+    catch (err) {
+        console.log(err);
+        return res.sendStatus(400);
+    }
+})
+
 //Delete progress item
 router.delete('/', authenticateToken, async (req, res) => {
     const progressId = req.body.progressId;

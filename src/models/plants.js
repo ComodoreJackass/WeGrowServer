@@ -14,7 +14,19 @@ const plants = (sequelize, DataTypes) => {
         },
         difficulty: {
             type: DataTypes.STRING
-        }
+        },
+        category: {
+            type: DataTypes.STRING
+        },
+        subcategory: {
+            type: DataTypes.STRING
+        },
+        image: {
+            type: DataTypes.BLOB
+        },
+        username: {
+            type: DataTypes.STRING
+        },
     });
 
     return Plant;

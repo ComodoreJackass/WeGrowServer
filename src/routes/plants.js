@@ -46,4 +46,44 @@ router.post('/byId', authenticateToken, async (req, res) => {
     return res.send(plants);
 })
 
+//Inserts new plant object into db
+router.post('/insert', async (req, res) => {
+    const name = req.body.name;
+    const summary = req.body.summary;
+    const difficulty = req.body.difficulty;
+    const category = req.body.category;
+    const subcategory = req.body.subcategory;
+    const image = req.body.image;
+    const username = req.body.username;
+
+    //Lots of checks needed here, I'll add them if there's time
+    const plants = await req.context.models.Plants.findAll();
+
+    let id = 0;
+    plants.forEach(element => {
+        if (element.id > id) {
+            id = element.id;
+        }
+    });
+
+    id += 1;
+
+    try {
+        await req.context.models.Plants.create({
+            id: id,
+            name: name,
+            summary: summary,
+            difficulty: difficulty,
+            category: category,
+            subcategory: subcategory,
+            image: image,
+            username: username,
+        });
+        return res.sendStatus(200);
+    }
+    catch (err) {
+        console.log(err);
+        return res.sendStatus(400);
+    }
+})
 export default router;

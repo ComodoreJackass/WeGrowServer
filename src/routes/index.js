@@ -6,7 +6,8 @@ import growthStages from './growthStages';
 import growthConditions from './growthConditions';
 import materials from './materials';
 import deleteAccount from './deleteAccount';
-//import senzori from './senzori';
+import plantComents from './plantComents';
+import sensors from './sensors';
 
 export default {
   plants,
@@ -17,5 +18,6 @@ export default {
   growthConditions,
   materials,
   deleteAccount,
-  //senzori
+  plantComents,
+  sensors,
 };

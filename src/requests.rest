@@ -39,15 +39,23 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNua
 }
 
 ###
-POST http://localhost:3000/progress/insert
+POST http://localhost:3000/plantComments/byId
 content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
 
 {
-    "userId": 1,
     "plantId": 1,
-    "stageId": 1,
-    "done": false
+    "userId": 1,
+    "comment": "hello world"
+}
+
+###
+DELETE http://localhost:3000/plantComments
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
+
+{
+    "commentId": "550ce09e-5612-44b4-ae02-7098b8de267e"
 }
 
 ###

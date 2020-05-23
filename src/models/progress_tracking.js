@@ -28,7 +28,10 @@ const progressTracking = (sequelize, DataTypes) => {
         },
         has_sensors:{
             type: DataTypes.BOOLEAN
-        }
+        },
+        sensor_id: {
+            type: DataTypes.STRING
+        },
     });
 
     return ProgressTracking;

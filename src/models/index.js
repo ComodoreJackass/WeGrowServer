@@ -22,12 +22,13 @@ const models = {
     GrowthConditions: sequelize.import('./growth_conditions'),
     Materials: sequelize.import('./materials'),
     PlantComents: sequelize.import('./plant_coments'),
+    Sensors: sequelize.import('./sensors'),
+    Chat: sequelize.import('./chat')
 };
 
 models.ProgressTracking.belongsTo(models.Plants, {  foreignKey : 'plant_id' });
 models.ProgressTracking.belongsTo(models.GrowthStages, {  foreignKey : 'stage_id' });
-models.PlantComents.belongsTo(models.Plants, { foreignKey: 'plant_id'});
-
+models.ProgressTracking.belongsTo(models.Sensors, {  foreignKey : 'sensor_id' });
 
 // Can be used for creating one to many connections and stuff,
 // but we can make do without additional complexity for now

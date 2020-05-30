@@ -14,9 +14,6 @@ const progressTracking = (sequelize, DataTypes) => {
         started_on: {
             type: DataTypes.DATE
         },
-        stage_id: {
-            type: DataTypes.INTEGER
-        },
         stage_started_on: {
             type: DataTypes.DATE
         },

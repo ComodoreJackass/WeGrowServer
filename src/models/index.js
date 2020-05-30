@@ -18,8 +18,6 @@ const models = {
     Users: sequelize.import('./users'),
     Plants: sequelize.import('./plants'),
     ProgressTracking: sequelize.import('./progress_tracking'),
-    GrowthStages: sequelize.import('./growth_stages'),
-    GrowthConditions: sequelize.import('./growth_conditions'),
     Materials: sequelize.import('./materials'),
     PlantComents: sequelize.import('./plant_coments'),
     Sensors: sequelize.import('./sensors'),
@@ -27,16 +25,7 @@ const models = {
 };
 
 models.ProgressTracking.belongsTo(models.Plants, {  foreignKey : 'plant_id' });
-models.ProgressTracking.belongsTo(models.GrowthStages, {  foreignKey : 'stage_id' });
 models.ProgressTracking.belongsTo(models.Sensors, {  foreignKey : 'sensor_id' });
-
-// Can be used for creating one to many connections and stuff,
-// but we can make do without additional complexity for now
-/*Object.keys(models).forEach(key => {
-    if ('associate' in models[key]) {
-        models[key].associate(models);
-    }
-});*/
 
 export { sequelize };
 export default models;

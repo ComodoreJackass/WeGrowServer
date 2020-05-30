@@ -18,13 +18,19 @@ const plants = (sequelize, DataTypes) => {
         category: {
             type: DataTypes.STRING
         },
-        subcategory: {
+        owner: {
             type: DataTypes.STRING
         },
         image: {
-            type: DataTypes.BLOB
+            type: DataTypes.STRING
         },
-        username: {
+        care: {
+            type: DataTypes.STRING
+        },
+        instructions: {
+            type: DataTypes.STRING
+        },
+        duration: {
             type: DataTypes.STRING
         },
     });

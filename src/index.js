@@ -26,8 +26,6 @@ app.use('/register', routes.register);
 
 app.use('/plants', routes.plants);
 app.use('/progress', routes.progress);
-app.use('/growthStages', routes.growthStages);
-app.use('/growthConditions', routes.growthConditions);
 app.use('/materials', routes.materials);
 app.use('/deleteAccount', routes.deleteAccount);
 app.use('/plantComments', routes.plantComents);

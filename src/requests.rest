@@ -30,12 +30,19 @@ GET http://localhost:3000/plants
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
 
 ###
-POST http://localhost:3000/progress/byId
+POST http://localhost:3000/plants/insert
 content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29yaXNuaWsiLCJpYXQiOjE1ODYzOTMwODJ9.mGC4iKLRuul3fpFYEvEr6AmnshvqlTXFYYhKW4pHwbE
 
 {
-    "userId": 1
+    "name": "Cherry rajčica",
+    "summary": "Ove male sočne rajčice najpopularnija su sorta rajčica kada je u pitanju uzgoj na balkonu. Često su ukusnije od većih rajčica, ali i skuplje.",
+    "difficulty": "Prigodno za početnike",
+    "category": "Povrće",
+    "owner": "Coffein++",
+    "care": "Kada cherry rajčice uzgajate u teglama, omogućite im dosta sunčeve svjetlosti jer ako budu u sjeni, slabo će se razviti i neće biti dovoljno plodova. Najbolje ih je izložiti sunčevom svjetlu šest do osam sati dnevno.",
+    "instructions": "Ako vam je prvi put da sadite rajčice, najbolje bi bilo da krenete od presadnica. Pri odabiru presadnica, vodite računa o njihovoj kvaliteti i zdravlju, a najbolje je da ih kupite na tržnici ili od provjerenog prodavača. Posudu u koju ćete posaditi rajčicu trebate do pola napuniti kompostom i zemljom, zatim staviti presadnicu zajedno s korijenom i zemljom.",
+    "duration": "40-60"
 }
 
 ###

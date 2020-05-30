@@ -62,6 +62,7 @@ router.post('/insert', async (req, res) => {
     const care = req.body.care;
     const instructions = req.body.instructions;
     const duration = req.body.duration;
+    const materials = req.body.materials
 
     //Lots of checks needed here, I'll add them if there's time
     const plants = await req.context.models.Plants.findAll();
@@ -86,7 +87,8 @@ router.post('/insert', async (req, res) => {
             owner: owner,
             care: care,
             instructions: instructions,
-            duration: duration
+            duration: duration,
+            materials: materials
         });
         return res.sendStatus(200);
     }

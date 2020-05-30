@@ -33,6 +33,9 @@ const plants = (sequelize, DataTypes) => {
         duration: {
             type: DataTypes.STRING
         },
+        materials: {
+            type: DataTypes.STRING
+        },
     });
 
     return Plant;
